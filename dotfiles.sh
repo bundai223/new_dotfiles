@@ -30,6 +30,8 @@ fi
 # virtualbox
 # vagrant
 # java
+# docker
+# utorrent
 #)
 #brew cask install ${caskapp[@]}
 #
@@ -76,4 +78,5 @@ mkdir -p $NVIM_CONF/dein
 #sh installer_dein.sh $NVIM_CONF/dein
 #rm installer_dein.sh
 
-
+mkdir -p ~/repos/github.com/bundai223/
+git clone git@github.com:bundai223/dotfiles.git ~/repos/github.com/bundai223/dotfiles

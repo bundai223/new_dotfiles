@@ -9,6 +9,17 @@ let s:backupdir = s:conf_root . '/backup'
 let s:swapdir = s:conf_root . '/swp'
 let s:undodir = s:conf_root . '/undo'
 
+function! MkDir(dirpath)
+  if !isdirectory(a:dirpath)
+    call mkdir(a:dirpath, "p")
+  endif
+endfunction
+call MkDir(s:conf_root)
+call MkDir(s:repos_path)
+call MkDir(s:backupdir)
+call MkDir(s:swapdir)
+call MkDir(s:undodir)
+
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
   autocmd!
@@ -331,7 +342,7 @@ call dein#end()
 filetype plugin indent on
 syntax enable
 
-" call dein#install()z
+" call dein#install()
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1

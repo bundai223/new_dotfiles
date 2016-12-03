@@ -79,11 +79,12 @@ rustup component add rust-src
 
 # repos
 mkdir -p ~/repos/github.com/bundai223/
-git clone git@github.com:bundai223/dotfiles.git ~/repos/github.com/bundai223/dotfiles
-git clone git@github.com:bundai223/new_dotfiles.git ~/repos/github.com/bundai223/
-git clone git@github.com:bundai223/zshrc.git ~/repos/github.com/bundai223/
-git clone git@github.com:bundai223/init.vim.git ~/repos/github.com/bundai223/
-git clone git@github.com:bundai223/tmux.conf.git ~/repos/github.com/bundai223/
+cd ~/repos/github.com/bundai223/
+git clone git@github.com:bundai223/dotfiles.git
+git clone git@github.com:bundai223/new_dotfiles.git
+git clone git@github.com:bundai223/zshrc.git
+git clone git@github.com:bundai223/init.vim.git
+git clone git@github.com:bundai223/tmux.conf.git
 
 # nvim
 

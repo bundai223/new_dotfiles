@@ -2,12 +2,18 @@ set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
 
+" release autogroup in MyAutoCmd
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
 let s:conf_root = expand('~/.config/nvim')
 let s:repos_path = expand('~/repos')
 let s:dotfiles_path = s:repos_path . '/github.com/bundai223/dotfiles'
 let s:backupdir = s:conf_root . '/backup'
 let s:swapdir = s:conf_root . '/swp'
 let s:undodir = s:conf_root . '/undo'
+let s:dein_repo_dir = s:conf_root . '/dein'
 
 function! MkDir(dirpath)
   if !isdirectory(a:dirpath)
@@ -19,11 +25,6 @@ call MkDir(s:repos_path)
 call MkDir(s:backupdir)
 call MkDir(s:swapdir)
 call MkDir(s:undodir)
-
-" release autogroup in MyAutoCmd
-augroup MyAutoCmd
-  autocmd!
-augroup END
 
 " help日本語・英語優先
 "set helplang=ja,en
@@ -321,13 +322,18 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 
-
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, 'p')
+  " set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+endif
 
-call dein#begin(expand('~/.config/nvim/dein'))
+call dein#begin(expand(s:dein_repo_dir))
 
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/deoplete.nvim')
@@ -342,7 +348,9 @@ call dein#end()
 filetype plugin indent on
 syntax enable
 
-" call dein#install()
+if dein#check_install()
+  call dein#install()
+endif
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1

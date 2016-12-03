@@ -328,6 +328,11 @@ endif
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    call MkDir(s:dein_repo_dir)
+    execute 'curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer_dein.sh'
+    execute 'sh installer_dein.sh '. s:dein_repo_dir
+    execute 'rm installer_dein.sh'
+
   endif
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, 'p')
   " set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim

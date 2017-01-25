@@ -33,7 +33,7 @@ brew_install()
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   #
   brew tap caskroom/cask
-  
+
   caskapp=(
    google-chrome
    android-file-transfer
@@ -54,7 +54,7 @@ brew_install()
    utorrent
   )
   brew cask install ${caskapp[@]}
-  
+
   cellers=(
    wget
    coreutils
@@ -73,9 +73,9 @@ brew_install()
    go
    neovim/neovim/neovim
   )
-  
+
   brew install ${cellers[@]}
-  
+
   brew cleanup
 }
 

@@ -39,7 +39,9 @@ install_from_goget()
   go get github.com/nsf/gocode            # go completions for editor.
 
   # install tool made by go.
+  echo ghq
   go get github.com/motemen/ghq        # git repos manager
+  echo peco
   go get github.com/peco/peco/cmd/peco # search interface looks like unite.vim
 
   #echo vet

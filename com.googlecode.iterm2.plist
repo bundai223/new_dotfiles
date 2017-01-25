@@ -11,7 +11,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>Default Bookmark Guid</key>
-	<string>C3530C08-A8E9-418C-9FE5-B2742C16E19B</string>
+	<string>DEC67BCA-EC7B-4D00-B605-B65379AD9A95</string>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
@@ -54,7 +54,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 122 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>333 71 1025 792 0 0 1440 877 </string>
+	<string>477 51 850 809 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 70 570 452 0 0 1440 877 </string>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
@@ -64,7 +64,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>F6B38386-41F5-4D8D-9009-9743BAFBB047</string>
 	<key>NoSyncLastTipTime</key>
-	<real>506066460.35093302</real>
+	<real>507052535.152053</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -83,6 +87,9 @@
 		<string>0008</string>
 		<string>0009</string>
 		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -128,7 +135,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-14T06:01:02Z</date>
+	<date>2017-01-25T15:55:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>iTerm Version</key>

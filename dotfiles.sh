@@ -4,28 +4,6 @@ export PATH=/usr/local/bin:${PATH}
 export CONF_BASE=~/.config
 export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
 
-if [ -n $CONF_BASE ]; then
-  mkdir -p $CONF_BASE
-fi
-
-if [ "$(uname)" == 'Darwin' ]; then
-  OS='Mac'
-  brew_install
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  OS='Linux'
-  go_install
-elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
-  OS='Cygwin'
-else
-  echo "Your platform ($(uname -a)) is not supported."
-  exit 1
-fi
-
-pip_install
-ruby_install
-gem_install
-
-
 
 brew_install()
 {
@@ -130,6 +108,32 @@ go_install()
   PATH=/usr/local/go/bin/:$PATH
   export PATH
 }
+
+
+
+
+if [ -n $CONF_BASE ]; then
+  mkdir -p $CONF_BASE
+fi
+
+if [ "$(uname)" == 'Darwin' ]; then
+  OS='Mac'
+  brew_install
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  OS='Linux'
+  go_install
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
+  OS='Cygwin'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+
+pip_install
+ruby_install
+gem_install
+
+
 
 # repos
 repos=(\

@@ -56,9 +56,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 78 918 495 0 0 1440 877 </string>
+	<string>269 78 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>477 8 962 852 0 0 1440 877 </string>
+	<string>603 23 836 852 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 70 570 452 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -662,7 +662,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>F6B38386-41F5-4D8D-9009-9743BAFBB047</string>
 	<key>NoSyncLastTipTime</key>
-	<real>507280009.60314101</real>
+	<real>509557807.83705598</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -690,6 +690,9 @@
 		<string>0013</string>
 		<string>0014</string>
 		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -735,12 +738,12 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-25T15:55:35Z</date>
+	<date>2017-02-23T15:50:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.0.13</string>
+	<string>3.0.14</string>
 </dict>
 </plist>

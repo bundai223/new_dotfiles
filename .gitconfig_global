@@ -4,6 +4,13 @@
 [user "ssh://git@github.com/bundai223/"]
 	name = bundai223
 	email = bundai223@gmail.com
+[user "https://github.com/bundai223/"]
+	name = bundai223
+	email = bundai223@gmail.com
+[user "http://github.com/bundai223/"]
+	name = bundai223
+	email = bundai223@gmail.com
+
 
 [core]
 	attributesfile = ~/.gitattributes_global
@@ -93,6 +100,8 @@
 	# grep関連
 	gr = grep
 
+  # リベース中コミット
+	rebasing-commit = "!f='$(git rev-parse --git-dir)/rebase-apply/patch'; if [ -f '$f' ]; then git show $(head -n1 '$f'); else echo 'Heh?'; fi"
 [push]
 	default = simple
 

@@ -129,9 +129,9 @@ else
   exit 1
 fi
 
-pip_install
-ruby_install
-gem_install
+#pip_install
+#ruby_install
+#gem_install
 
 
 
@@ -150,8 +150,10 @@ cd $own_repos_dir
 
 github_base_url=https://github.com
 
-for repos in ${OWN_REPOS[@]}; do
-  git clone ${github_base_url}/bundai223/${repos}
+for repo in ${repos[@]}; do
+  if [ ! -e ${repo} ]; then
+    git clone ${github_base_url}/bundai223/${repo}
+  fi
 done
 # nvim
 
@@ -159,19 +161,21 @@ done
 DOTFILES_ENTITY_PATH=~/repos/github.com/bundai223/new_dotfiles
 DOTFILE_NAMES_ARRAY=\
 (\
- .gitconfig_global\
- .gitignore_global\
- .gitattributes_global\
+ .gitconfig\
+ .config/git/.gitignore_global\
+ .config/git/.gitattributes_global\
  .config/git/templates\
  .ctags\
 )
 
 for dotfile in ${DOTFILE_NAMES_ARRAY[@]}; do
-  ln -s ${DOTFILES_ENTITY_PATH}/${dotfile} ~/${dotfile}
+  if [ ! -e ~/${dotfile} ]; then
+    ln -s ${DOTFILES_ENTITY_PATH}/${dotfile} ~/${dotfile}
+  fi
 done
 
 # Make git configuration file that include common config to make local setting.
-if [ ! -e ~/.gitconfig ]; then
-    cp ${DOTFILES_ENTITY_PATH}/.gitconfig_local ~/.gitconfig
+if [ ! -e ~/.config/git/.gitconfig_local ]; then
+    cp ${DOTFILES_ENTITY_PATH}/.config/git/.gitconfig_local ~/.config/git/.gitconfig_local
 fi
 

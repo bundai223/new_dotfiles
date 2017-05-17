@@ -25,6 +25,24 @@
 	grep = auto
 	ui = auto
 
+[push]
+	default = simple
+
+[pull]
+	ff = only
+
+[merge]
+	tool = mymvimdiff
+	ff = false
+
+[ghq]
+	root = ~/repos
+	root = ~/go
+	root = ~/sample
+
+[include]
+  path = ~/.gitconfig_local
+
 [alias]
 	ps = push					# ステータスを短く。ブランチ名付き
 	pl = pull					# ステータスを短く。ブランチ名付き
@@ -101,17 +119,4 @@
 
   # リベース中コミット
 	rebasing-commit = "!f='$(git rev-parse --git-dir)/rebase-apply/patch'; if [ -f '$f' ]; then git show $(head -n1 '$f'); else echo 'Heh?'; fi"
-[push]
-	default = simple
 
-[ghq]
-	root = ~/repos
-	root = ~/go
-	root = ~/sample
-
-[merge]
-	tool = mymvimdiff
-	ff = false
-
-[include]
-	path = ~/.gitconfig_local

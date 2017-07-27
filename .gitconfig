@@ -30,6 +30,7 @@
 
 [pull]
 	ff = only
+	rebase = preserve
 
 [merge]
 	tool = mymvimdiff
@@ -120,3 +121,6 @@
   # リベース中コミット
 	rebasing-commit = "!f='$(git rev-parse --git-dir)/rebase-apply/patch'; if [ -f '$f' ]; then git show $(head -n1 '$f'); else echo 'Heh?'; fi"
 
+[user]
+	email = nishimura.daiji@k-idea.jp
+	name = nishimura.daiji

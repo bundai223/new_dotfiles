@@ -16,6 +16,7 @@ brew_install()
    google-chrome
    android-file-transfer
    1password
+   buttercup
    dropbox
    skype
    steam
@@ -23,7 +24,6 @@ brew_install()
    vlc
    iterm2
    dash
-   kobito
    android-studio
    virtualbox
    vagrant
@@ -69,13 +69,12 @@ pip_install()
 # ruby
 ruby_install()
 {
-  rbenv install 2.3.1
-  rbenv global 2.3.1
+  rbenv install 2.4.3
+  rbenv global 2.4.3
 }
 
 gem_install()
 {
-  gem install rsense
   gem install neovim
 }
 
@@ -140,6 +139,7 @@ repos=(\
  dotfiles\
  new_dotfiles\
  zshrc\
+ zsh-utils\
  init.vim\
  tmux.conf\
 )
